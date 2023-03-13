@@ -48,7 +48,6 @@ CREATE TABLE "subcategory" (
 SELECT *
 from subcategory;
 
-
 CREATE TABLE "contacts" (
     "contact_id" INTEGER   NOT NULL,
     "first_name" VARCHAR(20)   NOT NULL,
@@ -79,6 +78,14 @@ SELECT country, COUNT(subcategory_id) AS "subcategory_ids"
 from campaign
 group by country;
 
+SELECT * from campaign where country = 'AU';
+
+SELECT * from campaign where company_name = 'Davis Ltd';
+
+SELECT MAX(goal) from campaign;
+
+SELECT MAX(pledged) from campaign;
+
 SELECT * from contacts where contact_id <1250;
 
 SELECT * from contacts where first_name = 'Samuel';
@@ -86,3 +93,20 @@ SELECT * from contacts where first_name = 'Samuel';
 SELECT * from category where category_id = 'cat7';
 
 SELECT * from subcategory where subcategory = 'jazz';
+
+SELECT c.contact_id, 
+co.first_name, 
+co.last_name, 
+co.email, 
+c.company_name, 
+c.category_id, 
+ca.category,
+c.subcategory_id,
+s.subcategory
+from campaign as c
+INNER JOIN contacts as co ON
+c.contact_id = co.contact_id
+INNER JOIN category as ca ON
+c.category_id = ca.category_id
+INNER JOIN subcategory as s ON
+c.subcategory_id = s.subcategory_id

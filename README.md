@@ -28,7 +28,12 @@ A Postgres(pgAdmin4)database was created called <crowdfunding_db>
 Tables were created, verified with a SELECT statement and CSV files imported to each table.
 A select statement was run for each table to check the correct data was running.
 
+I was also really please I was able to run an inner join SELECT statement across all 4 tables.
+This can be found at the bottom of the <crowdfunding_db_schema.sql>
+
 A check of these select statement was also run after option 1 in the <ETL_Mini_Project_SBotica.ipynb> to compare data extracted with SELECT statements in PgAdmin4.
+
+Above these blocks cells of code in <ETL_Mini_Project_SBotica.ipynb> you will find some code exploring the data.
 
 Enjoy marking this assignment!
 Thank you
