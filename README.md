@@ -24,7 +24,7 @@ The Crowdfunding Database was created using QUICK DBD.
 An image of the ERD used to create the schema is in the Resources folder.
 The file is <QuickDBD_Project1.png>
 The database schema is saved in Resources as <crowdfunding_db_schema.sql>
-A Postgres(pgAdmin4)database was created called <crowdfunding_db_new>
+A Postgres(pgAdmin4)database was created called <crowdfunding_db>
 Tables were created, verified with a SELECT statement and CSV files imported to each table.
 A select statement was run for each table to check the correct data was running.
 

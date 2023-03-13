@@ -23,6 +23,9 @@ CREATE TABLE "campaign" (
      )
 );
 
+SELECT * 
+from campaign;
+
 CREATE TABLE "category" (
     "category_id" VARCHAR(4)   NOT NULL,
     "category" VARCHAR(12)   NOT NULL,
@@ -31,6 +34,9 @@ CREATE TABLE "category" (
      )
 );
 
+SELECT * 
+from category;
+
 CREATE TABLE "subcategory" (
     "subcategory_id" VARCHAR(8)   NOT NULL,
     "subcategory" VARCHAR(17)   NOT NULL,
@@ -38,6 +44,10 @@ CREATE TABLE "subcategory" (
         "subcategory_id"
      )
 );
+
+SELECT *
+from subcategory;
+
 
 CREATE TABLE "contacts" (
     "contact_id" INTEGER   NOT NULL,
@@ -49,6 +59,9 @@ CREATE TABLE "contacts" (
      )
 );
 
+SELECT *
+from contacts;
+
 ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_contact_id" FOREIGN KEY("contact_id")
 REFERENCES "contacts" ("contact_id");
 
@@ -58,10 +71,6 @@ REFERENCES "category" ("category_id");
 ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "subcategory" ("subcategory_id");
 
-
-SELECT * 
-from campaign;
-
 SELECT country, COUNT(category_id) AS "category_ids" 
 from campaign
 group by country;
@@ -70,19 +79,10 @@ SELECT country, COUNT(subcategory_id) AS "subcategory_ids"
 from campaign
 group by country;
 
-SELECT *
-from contacts;
-
 SELECT * from contacts where contact_id <1250;
 
 SELECT * from contacts where first_name = 'Samuel';
 
-SELECT * 
-from category;
-
 SELECT * from category where category_id = 'cat7';
-
-SELECT *
-from subcategory;
 
 SELECT * from subcategory where subcategory = 'jazz';
